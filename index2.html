@@ -47,12 +47,13 @@
      <p id="result"></p>
      <script>
          (function(){
+             
              'use strict';
              
-             var priceForm=document.getElementById('price')
-             var numForm=document.getElementById('num')
-             var btn=document.getElementById('btn')
-             var result=document.getElementById('result')
+             var priceForm = document.getElementById('price')
+             var numForm = document.getElementById('num')
+             var btn = document.getElementById('btn')
+             var result = document.getElementById('result')
              
              priceForm.addEventListener('click',function(){
                  this.select();
@@ -62,15 +63,15 @@
              });
              
               btn.addEventListener('click',function(){
-                var price=priceForm.value
-                var num=numForm.value
+                var price=priceForm.value;
+                var num=numForm.value;
                 
-                if(price.match(/^[1-9][0-9]*$/))&&(num.match(/^[1-9][0-9]*$/)){
+                if(price.match(/^[1-9][0-9]*$/)&&(num.match(/^[1-9][0-9]*$/)){
                     //ok
-                     result.innerHTML='OK!'
-                } else{
+                     //result.innerHTML='OK!';
+                } else {
                     //error
-                    result.innerHTML='入力された値に誤りがあります。'
+                    result.innerHTML='入力された値に誤りがあります。';
                 }
              });
          })();

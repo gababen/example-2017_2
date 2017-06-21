@@ -8,9 +8,19 @@ body{
     margin: 30px aut 0;
     width: 200px;
     height: 200px;
-    border=radius: 50%;
+    border-radius: 50%;
     background: #EF454A;
-    text=align: center;
-    line=height: 200px;
-    color
+    text-align: center;
+    line-height: 200px;
+    color: #fff;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.9;
+    box-shadow: 0 10px  #D1483E
+    
+}
+
+#btn:hover {
+    opacity: 1;
 }

@@ -4,7 +4,7 @@
     var comment = document.getElementById('comment');
     var label = document.getElementById('label');
     
-    var LIMIT = 20;
+    var LIMIT = 100;
     var WARNING = 10;
     
     label.innerHTML =LIMIT;

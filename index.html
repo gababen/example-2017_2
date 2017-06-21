@@ -3,11 +3,50 @@
 <head>
   <meta charset="utf-8">
   <title>Stop Watch</title>
-</head>
-</body>
+  <style>
+      body {
+          background: #e0e0e0;
+          font-family:Arial,sans-serif;
+          text-align:center;
+      }
+      #timertext{
+          color: #00aaff;
+          font-size: 128px;
+          margin: 40px auto; 
+          text-shadow:0 1px 0 rgba(255,255,255,0,5)
+      }
+    </style>
+</head>  
+<body>
    <div id="timerText">0.00</div>
    <button id="start">START</button>
    <button id="stop">STOP</button>
-   <button id="reset>RESET</button>
-</body>
+   <button id="reset">RESET</button>
+   <script>
+    (function() {
+               'use strict';
+               
+        var startTime;
+        var timerId;
+        
+        var startButton=document.getElementById('start');
+        var stopButton=document.getElementById('stop');
+        var resetButton=document.getElementById('reset');
+        var timerText=document.getElementById('timerText');
+               
+startbutton.addEventListener('click',function(){
+    startTime=Date.now();//1970/1/1 00:00:00からの経過ミリ秒
+    updateTimertext();
+} )();
+        
+        function updateTimerText(){
+        timerId=setTimeout(function() {
+            
+        },10);
+        }
+    
+      })();
+               </script>
+    </body>               
 </html>
+               

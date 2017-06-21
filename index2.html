@@ -85,7 +85,7 @@
                     x1=Math.floor(price/num/unit)*unit;
                     y1=price-(x1 * num);     
                     x2=Math.ceil(price/num/unit)*unit;
-                    y2=Math.ads(price-(x2 * num)); 
+                    y2=Math.abs(price-(x2 * num)); 
                    result.innerHTML='一人'　+ x1 +　'円　だと　'+ y1 +　'円足りません。<br>'
                         +'一人'+　x2 +　'円だと'+　y2 +'円余ります。';
 

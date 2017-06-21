@@ -42,8 +42,42 @@
 <body>
   <h1>割り勘電卓</h1>
   <p>金額 <input type="text" id="price" value="0"></p>
-  <p>人数 <input type="text" id="price" value="0"></p>
+  <p>人数 <input type="text" id="num" value="0"></p>
     <div id="btn">計算する</div>
     <p id="result"></p>
+    <script>
+        (function(){
+            'use strict';
+            
+            var priceForm = document.getElementById('price')
+            var numForm = document.getElementById('num')
+            var result = document.getElementById('result')
+            
+            priceForm.addEventListener('click',function() {
+                this.select();
+            });
+            numForm.addEventListener('click',function() {
+                this.select();
+            });
+            
+            btn.addEventListener('click',function(){
+                var price = priceForm.value;
+                var num = numForm.value;
+                
+                if (price.match(/^[1-9][0-9]*$/) && num.match(/^[1-9][0-9]*$/)){
+                    // ok
+                    //result.innerHTML = 'OK!';
+                    if (price % num === 0){
+                       result.innerHTML = '一人 ' +(price / num)+ ' 円ちょうどです！';
+                    }else {
+                        result.innerHTML = 'something';
+                    }
+                } else {
+                    //error
+                    result.innerHTML = '入力された値に誤りがあります。';
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

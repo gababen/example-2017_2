@@ -25,7 +25,7 @@ input[type="text"]{
     margin: 30px auto;
     width: 180px;
     border-radius: 5px;
-    box-shadow: 0 4px 0 #e91b;
+    box-shadow: 0 4px 0 #e91b0c;
     background:#f44336;
     color: #fff;
     cursor: pointer;
@@ -39,9 +39,9 @@ input[type="text"]{
 <body>
 <h1>割り勘電卓</h1>
  <p>金額<input type="text" id="price" value="0"></p>
- <p>人数<input type="texy" id="num" value="0"></p>
+ <p>人数<input type="text" id="num" value="0"></p>
  <div id="btn">計算する</div>      
-<P id="result"></P>
+<p id="result"></p>
 <script>
     (function(){
     'use strict';
@@ -53,7 +53,7 @@ input[type="text"]{
         
     priceForm.addEventListener('click',function(){
         this.select();
-    })();
+    });
     numForm.addEventListener('click',function(){
         this.select(); 
     });
@@ -62,12 +62,12 @@ input[type="text"]{
      var price =priceForm.value;
      var num =numForm.value;                    
     
-     if(price.match(/^[1-9][0-9]*$/)&& num.match(/^[1-9][0-9]*$/)){
-           //ok
-           // result.innerHTML='OK!'；    
-    } else{
-           //error
-　　 result.innerHTML='入力された値に誤りがあります。';    
+     if (price.match(/^[1-9][0-9]*$/) && num.match(/^[1-9][0-9]*$/)){
+           // ok
+           // result.innerHTML = 'OK!'；    
+    } else {
+        // error
+　　    result.innerHTML='入力された値に誤りがあります。';    
     } 
         
     });

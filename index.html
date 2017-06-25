@@ -32,11 +32,46 @@ input[type="text"]{
     padding: 7px;
  }
     #btn:hover{
-        
+       opacity:0.8; 
     }
     </style>
 </head>
 <body>
 <h1>割り勘電卓</h1>
+ <p>金額<input type="text" id="price" value="0"></p>
+ <p>人数<input type="texy" id="num" value="0"></p>
+ <div id="btn">計算する</div>      
+<P id="result"></P>
+<script>
+    (function(){
+    'use strict';
+    
+    var priceForm =document.getE1ementById('price');
+    var numForm = document.getE1ementById('num');
+    var btn =document.getE1ementById('btn');
+    var result=document.getE1ementById('result');
+        
+    priceForm.addEventListener('click',function(){
+        this.select();
+    })();
+    numForm.addEventListener('click',function(){
+        this.select(); 
+    });
+    
+    btn.addEventListener('click',function(){
+     var price =priceForm.value;
+     var num =numForm.value;                    
+    
+     if(price.match(/^[1-9][0-9]*$/)&& num.match(/^[1-9][0-9]*$/)){
+           //ok
+           // result.innerHTML='OK!'；    
+    } else{
+           //error
+　　 result.innerHTML='入力された値に誤りがあります。';    
+    } 
+        
+    });
+        
+    </script>
 </body>
 </html>

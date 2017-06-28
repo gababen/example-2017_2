@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang = "ja">
 <head>
-<meta charset="utf-8">
+<meta charset = "utf-8">
 <title>割り勘電卓</title>
 <style>
 body{
@@ -12,7 +12,7 @@ font-family:Arial,sans-serif;
 h1{
 font-size:24px;
 }
-input[type="text"]{
+input[type = "text"]{
     padding: 7px;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -38,18 +38,18 @@ input[type="text"]{
 </head>
 <body>
 <h1>割り勘電卓</h1>
- <p>金額<input type="text" id="price" value="0"></p>
- <p>人数<input type="text" id="num" value="0"></p>
- <div id="btn">計算する</div>      
-<p id="result"></p>
+ <p>金額<input type = "text" id = "price" value = "0"></p>
+ <p>人数<input type = "text" id = "num" value = "0"></p>
+ <div id = "btn">計算する</div>      
+<p id = "result"></p>
 <script>
     (function(){
     'use strict';
     
-    var priceForm =document.getE1ementById('price');
+    var priceForm = document.getE1ementById('price');
     var numForm = document.getE1ementById('num');
-    var btn =document.getE1ementById('btn');
-    var result=document.getE1ementById('result');
+    var btn = document.getE1ementById('btn');
+    var result = document.getE1ementById('result');
         
     priceForm.addEventListener('click',function(){
         this.select();
@@ -59,18 +59,30 @@ input[type="text"]{
     });
     
     btn.addEventListener('click',function(){
-     var price =priceForm.value;
-     var num =numForm.value;                    
+     var price = priceForm.value;
+     var num = numForm.value;                    
     
      if (price.match(/^[1-9][0-9]*$/) && num.match(/^[1-9][0-9]*$/)){
            // ok
-           // result.innerHTML = 'OK!'；    
+           //result.innerHTML = 'OK!'； 
+         if(price % num === 0) {
+             result.innerHTML = '一人' + (price / num) + '円ちょうどです！'；
+         } else {
+            // result.innerHTML = 'something';
+         x1 = Math. floor(price/num/unit) * unit;
+         y1 = price - (x1 * num);
+         x2 = Math.ceil(price/num/unit) * unit;
+         y2 = Math.abs(price - (x2 * num));
+         result.innerHTML = 
+         '一人'+ x1 + '円だと'+ y1 + '円足りません。<br>'+'一人' + x2 +'円だと' +　y2 +'円余ります。';
+         }
     } else {
         // error
-　　    result.innerHTML='入力された値に誤りがあります。';    
+　　    result.innerHTML = '入力された値に誤りがあります。';    
     } 
         
     });
+        
         
     </script>
 </body>

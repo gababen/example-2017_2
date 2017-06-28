@@ -41,5 +41,51 @@
   <p>人数<input type="text" id="num" value="0"></p>    
   <div id="btn">計算する</div>
   <p id="result"></p>
+  <script>
+      (function() {
+          'use strict';
+
+          var priceForm = document.getElementById('price');
+          var numForm = document.getElementById('num');
+          var btn = document.getElementById('btn');
+          var result = document.getElementById('result');
+          
+          priceForm.addEventListener('Click', function() {
+              this.select();
+          });
+          numForm.addEventListener('Click', function() {
+              this.select();
+          });
+          
+          btn.addEventListener('Click', function() {
+              var price = priceForm.value;
+              var num = numForm.value;
+              
+              if (price.match(/^[1-9][0-9]*$/) && num.match(/^[1-9][0-9]*$/)) {
+                  // ok
+                  // result.innerHTML = 'OK!';
+                  if (price % num === 0) {
+                      result.innerHTML = '一人 '　+　(price / num) + '円ちょうどです！
+                      ';
+                   } else {
+                  // result.interHTML = 'something';
+                  x1 = Math.floor(price / num / unit /) * unit;      
+                  y1 = price - (x1 * num);
+                  x2 = Math.ceil(price / num / unit /) * unit;      
+                  y2 = Math.abs(price - (x2 * num));
+                  result.interHTML =
+                  '一人 ' + x1 + ' 円だと ' + y1 + ' 円足りません。<br>' +
+                  '一人 ' + x2 + ' 円だと ' + y2 + ' 円余ります。';       
+                   }
+               } else {
+                  // error
+                  result.innerHTML = '入力された値に誤りがあります。'
+              }
+                  
+          });
+
+          
+      })();                             
+    </script>      
 </body>
 </html>
